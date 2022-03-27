@@ -10,39 +10,28 @@ client.connect( async err => {
     console.log('Database connected');
     console.time('Time used'); // start time of operation
 
-    /* let result = await client.db('Week03').collection('companies').insertOne({      // promise insert only a document   
-    //     name: 'Zenfolio',                                                           // await: wait until promise is resolve before moving on
-    //     address: {
-    //        street: '123 Main St',
-    //         city: 'New York',
-    //         state: 'NY',
-    //         zip: '10001'
-    //     }
-    //   }); 
+    let result = await client.db('Week03').collection('companies').insertOne({      // promise insert only a document   
+         name: 'Zenfolio',                                                           // await: wait until promise is resolve before moving on
+         address: {
+            street: '123 Main St',
+             city: 'New York',
+             state: 'NY',
+             zip: '10001'
+         }
+       }); 
     
-    //console.log(result);
+    console.log(result);
     console.log(result.insertedId); // print inserted id
     console.log(await client.db('Week03').collection('companies').countDocuments()) // count documents in collection
     
 
-    client.db('Week03').collection('companies').deleteMany({    // promise delete only one document
+    client.db('Week03').collection('companies').deleteMany({    // promise delete all the documents with the given criteria
         Name: 'Zenfolio'
     }).then(result => {
         console.log('Deleted ' + result.deletedCount + ' documents');
-    }); */
+    });
 
-    //client.db('Week03').collection('companies').drop(); // delete collection
-
-     let faker = require("./faker.js");
-     let hash = require("./hash.js");
-     const hashpass = hash.hashpass;
-     
-    client.db('Account').collection('User Details').insertOne({        
-              User: faker.randomName,                           
-              Email: faker.randomEmail,
-              Phone: faker.randomPhoneNumber,
-              Password: hashpass
-            });
+    client.db('Week03').collection('companies').drop(); // delete collection
 
     console.log('Operation completed')
     console.timeEnd('Time used'); // end time of operation

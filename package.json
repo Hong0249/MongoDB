@@ -1,0 +1,16 @@
+{
+  "name": "my_modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Week4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bson": "^4.6.2",
+    "hashcat": "^0.1.1",
+    "mongodb": "^4.4.1"
+  }
+}
